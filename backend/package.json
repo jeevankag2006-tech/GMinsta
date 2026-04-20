@@ -1,0 +1,30 @@
+{
+    "name": "gminsta-backend",
+    "version": "1.0.0",
+    "description": "GMinsta - Mini Social Media App Backend",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [
+        "social-media",
+        "instagram",
+        "express",
+        "mysql"
+    ],
+    "author": "Student",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2",
+        "mysql2": "^3.6.0",
+        "jwt-simple": "^0.5.6",
+        "bcryptjs": "^2.4.3",
+        "multer": "^1.4.5-lts.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}

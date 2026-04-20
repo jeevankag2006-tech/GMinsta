@@ -1,0 +1,40 @@
+# GMinsta - Git Ignore File
+
+# Node modules
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Environment variables (never commit!)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Uploaded images (temporary)
+backend/uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+*.test.js
+coverage/
+
+# Misc
+.cache/
+temp/
+tmp/

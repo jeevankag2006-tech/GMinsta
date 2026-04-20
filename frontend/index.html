@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMinsta - Mini Social Media</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="page active">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h1 class="logo">📸 GMinsta</h1>
+                    <h2>Welcome Back</h2>
+                    <p class="subtitle">Sign in to your account</p>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+
+                    <p class="auth-switch">
+                        Don't have an account?
+                        <a href="#register" class="link">Sign up here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h1 class="logo">📸 GMinsta</h1>
+                    <h2>Create Account</h2>
+                    <p class="subtitle">Join our community</p>
+
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="register-username">Username</label>
+                            <input type="text" id="register-username" placeholder="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-confirm">Confirm Password</label>
+                            <input type="password" id="register-confirm" placeholder="••••••••" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </form>
+
+                    <p class="auth-switch">
+                        Already have an account?
+                        <a href="#login" class="link">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feed Page -->
+        <div id="feed-page" class="page">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <div class="logo-section">
+                        <h1 class="logo">📸 GMinsta</h1>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#feed" class="nav-item active">
+                            <span class="icon">🏠</span> Feed
+                        </a>
+                        <a href="#create" class="nav-item">
+                            <span class="icon">➕</span> Create
+                        </a>
+                        <a href="#chat" class="nav-item">
+                            <span class="icon">💬</span> Chat
+                        </a>
+                        <a href="#profile" class="nav-item">
+                            <span class="icon">👤</span> Profile
+                        </a>
+                        <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="feed-container">
+                <div class="feed-main">
+                    <div id="posts-feed" class="posts-feed">
+                        <!-- Posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Post Page -->
+        <div id="create-page" class="page">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <h1 class="logo">📸 GMinsta</h1>
+                    <a href="#feed" class="nav-item">← Back to Feed</a>
+                </div>
+            </nav>
+
+            <div class="create-container">
+                <div class="create-card">
+                    <h2>Create New Post</h2>
+
+                    <form id="create-post-form" class="create-form">
+                        <div class="form-group">
+                            <label for="post-image">Upload Image</label>
+                            <div class="image-upload">
+                                <input type="file" id="post-image" accept="image/*" required>
+                                <div id="image-preview" class="image-preview">
+                                    <p>Click to upload or drag and drop</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="post-caption">Caption</label>
+                            <textarea id="post-caption" placeholder="Share your moment..." maxlength="500"></textarea>
+                            <span class="char-count"><span id="char-count">0</span>/500</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <h1 class="logo">📸 GMinsta</h1>
+                    <a href="#feed" class="nav-item">← Back to Feed</a>
+                </div>
+            </nav>
+
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-info">
+                        <div class="profile-pic-wrapper">
+                            <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile" class="profile-pic">
+                            <label for="profile-avatar-input" class="upload-avatar-btn">Change photo</label>
+                            <input type="file" id="profile-avatar-input" accept="image/*" hidden>
+                        </div>
+                        <div class="profile-details">
+                            <h2 id="profile-username">username</h2>
+                            <p id="profile-email">user@email.com</p>
+                            <div class="profile-stats">
+                                <div class="stat profile-stat-clickable" id="posts-stat">
+                                    <span class="stat-number" id="post-count">0</span>
+                                    <span class="stat-label">Posts</span>
+                                </div>
+                                <div class="stat profile-stat-clickable" id="followers-count-wrapper">
+                                    <span class="stat-number" id="followers-count">0</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat profile-stat-clickable" id="following-count-wrapper">
+                                    <span class="stat-number" id="following-count">0</span>
+                                    <span class="stat-label">Following</span>
+                                </div>
+                            </div>
+                            <div class="profile-followers">
+                                <h3>Followers</h3>
+                                <div id="followers-list" class="followers-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-posts">
+                    <h3>My Posts</h3>
+                    <div id="user-posts" class="posts-grid">
+                        <!-- User posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Page -->
+        <div id="chat-page" class="page">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <h1 class="logo">📸 GMinsta</h1>
+                    <a href="#feed" class="nav-item">← Back to Feed</a>
+                </div>
+            </nav>
+
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <input type="text" id="search-users" class="search-input" placeholder="Search users...">
+                    <div id="conversations-list" class="conversations-list">
+                        <!-- Conversations will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="chat-main">
+                    <div id="chat-header" class="chat-header">
+                        <h3 id="chat-user-name">Select a conversation</h3>
+                    </div>
+                    <div id="messages-container" class="messages-container">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                    <div class="chat-input-area">
+                        <form id="message-form" class="message-form">
+                            <input type="text" id="message-input" placeholder="Type a message..." required>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">List</h3>
+                <button id="close-modal" class="modal-close">×</button>
+            </div>
+            <div id="modal-list" class="modal-list"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/feed.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
